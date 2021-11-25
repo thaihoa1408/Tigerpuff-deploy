@@ -24,6 +24,13 @@ app.get("/admin*", function (req, res) {
     }
   });
 });
+app.get("/customer*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build/index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 //set port, listen for requests
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
